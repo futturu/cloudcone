@@ -1,0 +1,19 @@
+# Getting the DKIM keys of a domain
+# "username" is the one the domain was created under
+# domain is the domain itself, e.g., example.com
+ 
+v-list-mail-domain-dkim <username> <domain>
+ 
+ 
+-----BEGIN RSA PRIVATE KEY-----
+ 
+GySW9qQg9yNIq+Ir9FW/BZj4g4YgaDKjBBDyXcjD80zhqMe4M9oWif6Y8vX/yRDl
+ 
+4IzClP36dv6OiCz9BdczxZ+dKJWVu6fkD3d5Kx3xtA==
+-----END RSA PRIVATE KEY-----
+ 
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCVc23awQJDzkcQh0O4+OR3hbZ
+...
+SIS1megWfcMl5D7PnwIDAQAB
+-----END PUBLIC KEY-----
