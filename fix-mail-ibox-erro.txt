@@ -1,0 +1,12 @@
+[FIX] Initialization failed: namespace configuration error: inbox=yes namespace missing
+Post  by SS88 » Tue Dec 13, 2016 12:03 pm
+
+If you receive this error (it also stops you from logging into your emails):
+CODE: SELECT ALL
+
+Initialization failed: namespace configuration error: inbox=yes namespace missing
+Open up /etc/dovecot/conf.d/15-mailboxes.conf and add in:
+CODE: SELECT ALL
+
+inbox = yes
+inbetween namespace inbox { }
