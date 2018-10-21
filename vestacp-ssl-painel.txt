@@ -1,0 +1,18 @@
+To get SSL working for your VestaCP:
+
+You can do the following:
+CODE: SELECT ALL
+
+mv /usr/local/vesta/ssl/certificate.crt /usr/local/vesta/ssl/certificate.crt.backup
+CODE: SELECT ALL
+
+mv /usr/local/vesta/ssl/certificate.key /usr/local/vesta/ssl/certificate.key.backup
+CODE: SELECT ALL
+
+nano /usr/local/vesta/ssl/certificate.crt #paste your crt -> save.
+CODE: SELECT ALL
+
+nano /usr/local/vesta/ssl/certificate.key #paste your key -> save.
+CODE: SELECT ALL
+
+service vesta restart
