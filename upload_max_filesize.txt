@@ -1,0 +1,22 @@
+# To make it easier to recover from a misconfiguration, make a copy of the file
+ 
+cp /etc/php.ini /etc/php.ini.copy
+ 
+Then open the original file using the nano text editor
+ 
+nano /etc/php.ini
+ 
+# Search for the upload_max_filesize directive. It and the default value are shown next
+ 
+post_max_size = XM
+upload_max_filesize = XM
+ 
+# Change it to a value that exceeds the size of files you were trying to upload
+ 
+post_max_size = 64M
+upload_max_filesize = 64M
+ 
+# Save and close the file, then restart Apache using the following command
+ 
+apachectl restart
+ 
