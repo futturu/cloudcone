@@ -1,0 +1,26 @@
+Step #1: Install Memcached PHP Extension
+First, clean-up yum:
+
+yum clean all
+
+As a matter of best practice we’ll update our packages:
+
+yum -y update
+
+Then installing PHP Memcached extension and related packages is now as simple as running just one command::
+
+yum -y install php-pecl-memcache
+
+Step #2: Verify Installation
+Restart memcached and httpd:
+
+systemctl restart memcached
+systemctl restart httpd
+
+Use the following command to view information on the installed PHP modules:
+
+php -m | grep memcache
+
+And look for a response similar to:
+
+memcache
