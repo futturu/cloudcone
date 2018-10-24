@@ -9,6 +9,6 @@ Faça o backup do plugin antes:
 tar -cvf js_composer.tar js_composer/
 
 Copie todos os arquivos novo para a pasta do plugin:
-cp -rf js_composer/*/home/USUARIOVESTA/web/DOMINIO.COM.BR/public_html/wp-content/plugins/js_composer/
+cp -rf js_composer/* /home/USUARIOVESTA/web/DOMINIO.COM.BR/public_html/wp-content/plugins/js_composer/
 
 Pronto!
