@@ -1,6 +1,6 @@
 No exemplo eu estou atualizando o WPBakery Page Builder for WordPress
 
-Envie o aquivo .zip do update do plugins via FTP
+Envie o aquivo .zip do update do plugin via FTP
 
 Use o mesmo usuário da conta do cliente para fazer isso, não use o root. Se os arquivos estiverem para outro usuário, use esse comando para ganhar acesso:
 chown -R usuario:usuario /pasta/
@@ -10,5 +10,7 @@ tar -cvf js_composer.tar js_composer/
 
 Copie todos os arquivos novo para a pasta do plugin:
 cp -rf js_composer/* /home/USUARIOVESTA/web/DOMINIO.COM.BR/public_html/wp-content/plugins/js_composer/
+
+Atualize a página do plugin e veja se ele esta com a versão mais nova.
 
 Pronto!
