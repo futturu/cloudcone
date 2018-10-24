@@ -1,0 +1,40 @@
+Installing and Configuring WordPress
+You can download the latest version of the WordPress source from the official website. You can get the latest version of WordPress by running the following command:
+
+wget http://wordpress.org/latest.tar.gz
+Once download is finished, extract the downloaded file with the following command:
+
+tar -xzvf latest.tar.gz
+Next, move the extracted files to the Apache web root directory:
+
+sudo cp -avr wordpress/* /var/www/html/
+Next, create a directory for WordPress to store uploaded files:
+
+sudo mkdir /var/www/html/wp-content/uploads
+Next, assign proper ownership and permissions to your WordPress files and folders:
+
+sudo chown -R apache:apache /var/www/html/
+sudo chmod -R 755 /var/www/html/
+Next, you will need to make some changes in the WordPress main configuration file, so it can be connected with the database and user.
+
+First, rename and edit the WordPress main configuration file:
+
+cd /var/www/html/
+sudo mv wp-config-sample.php wp-config.php
+sudo nano wp-config.php
+Change the DB_NAME, DB_USER, and DB_PASSWORD variables as shown below:
+
+define('DB_NAME', 'wordpress');
+define('DB_USER', 'user');
+define('DB_PASSWORD', 'password');
+Save and close the file when you are finished.
+
+Accessing WordPress Web Installation Wizard
+Before starting, you will need to allow access to the Apache ports using firewalld.
+
+You can do this by running the following command:
+
+sudo firewall-cmd --permanent --zone=public --add-service=http
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+Next, open your web browser and type the URL http://your-server-ip.
