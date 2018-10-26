@@ -14,3 +14,7 @@ cp -rf js_composer/* /home/USUARIOVESTA/web/DOMINIO.COM.BR/public_html/wp-conten
 Atualize a página do plugin e veja se ele esta com a versão mais nova.
 
 Pronto!
+
+descompactar arquivos .tar: 
+
+tar -xvf nomedoarquivo.tar 
