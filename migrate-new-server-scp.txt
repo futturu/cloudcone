@@ -5,6 +5,8 @@ v-backup-user admin
 
 2. Copy tarball to the new server and place it in the /home/backup directory
 scp /home/backup/admin.2014-01-14.tar new-server:/home/backup/
+or
+scp /backup/* root@panel.example.com:/backup/
 
 
 3. Restore backup on the new server
