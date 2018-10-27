@@ -1,0 +1,17 @@
+How to migrate user to the new server
+1. Make user backup on the old server. In this example we will use admin as the reference.
+v-backup-user admin
+
+
+2. Copy tarball to the new server and place it in the /home/backup directory
+scp /home/backup/admin.2014-01-14.tar new-server:/home/backup/
+
+
+3. Restore backup on the new server
+v-restore-user admin admin.2014-01-14.tar
+
+
+
+If you want to restore data under another user name, simply rename archive. If user name doesn't exist on the server, account will be created automatically.
+mv /home/backup/admin.2014-01-14.tar /home/backup/newuser.2014-01-14.tar
+v-restore-user newuser newuser.2014-01-14.tar
