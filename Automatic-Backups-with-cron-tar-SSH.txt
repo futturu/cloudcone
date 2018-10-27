@@ -1,3 +1,22 @@
+Everyone knows that backups are important, but how many of us regularly back up our own websites, blogs, or whatever? Well, I've put together a relatively simple way for my Mac to log into my Linux-based webserver, archive some content, and download it for me. All of this is done Automatically, too!
+
+The first thing I had to do, was set up my home machine (a Mac, but any Unix-based system should work, too) so that it could log into a remote host without requiring me to type a password. This is accomplished by generating a public key, which I can store on my webserver. To do this, I opened a Terminal, and typed the following:
+ssh-keygen -t rsa
+This generated the following output, and I accepted all default values... even the empty passphrase. This is important, because I don't want to type anything to log into my server!
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/brad/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/brad/.ssh/id_rsa.
+Your public key has been saved in /home/brad/.ssh/id_rsa.pub.
+
+
+Now, I need to store the public key (id_rsa.pub) on my webserver. Again, from my Terminal (in my home directory), I issue the following command to log into my webserver (Note that you'd need to change the following command to fit your needs).
+cat .ssh/id_rsa.pub | ssh myusername@mywebserver.com 'cat >> .ssh/authorized_keys'
+
+I'll need to type my password here, but after executing this command, I should be able to ssh into my remote server without ever typing my password again!
+
 Now that I've accomplished that, I need to write some simple bash scripts that will archive my web content. On my Webserver: For simplicity sake, let's save this in our home directory in a file named www.sh. Inside that file we put the following shell script, which uses tar to archive my web directory and then calls bzip2 to compress the tar file. Upon execution, I should have a file with a name similar to 2007-01-10.tar.bz2. Notice that you could also modify this script to invoke mysql_dump or pg_dump if you needed to backup a database as well! 
 
 #!/bin/bash
