@@ -23,9 +23,7 @@ add_header Feature-Policy "geolocation 'none'; midi 'none'; notifications 'none'
 #add_header Content-Security-Policy-Report-Only "script-src 'self'; default-src 'self';";
 #add_header Content-Security-Policy "default-src 'self'; script-src 'self';";
 #add_header Content-Security-Policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';";
-#add_header Content-Security-Policy "default-src 'none'; script-src https://www.futturu.page; style-src 'unsafe-inline'; script-src futturu.page google.com;";
-#add_header Content-Security-Policy "default-src https://www.futturu.page:443";
-
+add_header Content-Security-Policy "default-src 'self' www.futturu.page; script-src 'self' www.futturu.page; style-src 'self' www.futturu.page; img-src 'self' www.futturu.page; connect-src 'self'; font-src fonts.googleapis.com; object-src 'self'; media-src www.futturu.page; frame-src 'self'; sandbox allow-forms allow-scripts; child-src 'self'; form-action	'self'; frame-ancestors 'none'; plugin-types application/pdf;";
 
 Add too:
 proxy_cookie_path / "/; secure; HttpOnly";
