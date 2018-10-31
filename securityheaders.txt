@@ -21,4 +21,6 @@ add_header Content-Security-Policy "default-src 'self';";
 add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; ";
 add_header Feature-Policy "geolocation 'none'; midi 'none'; notifications 'none'; push 'self'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'self'; fullscreen 'self'; payment 'self'";
 
+nginx -t
+
 service nginx restart
