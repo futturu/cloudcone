@@ -11,8 +11,10 @@ Feature-Policy
 
 Go go go!
 
+Edit:
 nano /etc/nginx/nginx.conf
 
+Add:
 add_header X-XSS-Protection "1; mode=block";
 add_header X-Frame-Options "DENY";
 add_header Content-Security-Policy-Report-Only "script-src https://www.google-analytics.com https://q.quora.com";
@@ -24,4 +26,5 @@ add_header Feature-Policy "geolocation 'none'; midi 'none'; notifications 'none'
 Test confs:
 nginx -t
 
+Restart:
 service nginx restart
