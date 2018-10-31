@@ -22,6 +22,10 @@ add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; ";
 add_header Feature-Policy "geolocation 'none'; midi 'none'; notifications 'none'; push 'self'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'self'; fullscreen 'self'; payment 'self'";
 #add_header Content-Security-Policy-Report-Only "script-src 'self'; default-src 'self';";
 #add_header Content-Security-Policy "default-src 'self'; script-src 'self';";
+#add_header Content-Security-Policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';";
+#add_header Content-Security-Policy "default-src 'none'; script-src https://www.futturu.page; style-src 'unsafe-inline'; script-src futturu.page google.com;";
+#add_header Content-Security-Policy "default-src https://www.futturu.page:443";
+
 
 Add too:
 proxy_cookie_path / "/; secure; HttpOnly";
