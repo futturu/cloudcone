@@ -1,0 +1,24 @@
+Test your domain: https://securityheaders.com
+
+Headers:	
+Referrer-Policy 
+X-XSS-Protection 
+X-Frame-Options 
+X-Content-Type-Options 
+Content-Security-Policy 
+Strict-Transport-Security 
+Feature-Policy
+
+Go go go!
+
+nano /etc/nginx/nginx.conf
+
+add_header X-XSS-Protection "1; mode=block";
+add_header X-Frame-Options "DENY";
+add_header Content-Security-Policy-Report-Only "script-src https://www.google-analytics.com https://q.quora.com";
+add_header X-Content-Type-Options "nosniff" always;
+add_header Content-Security-Policy "default-src 'self';";
+add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; ";
+add_header Feature-Policy "geolocation 'none'; midi 'none'; notifications 'none'; push 'self'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'self'; fullscreen 'self'; payment 'self'";
+
+service nginx restart
