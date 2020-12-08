@@ -1,0 +1,3 @@
+https://forum.vestacp.com/viewtopic.php?t=17129#p71225
+
+TUTORIAL: PHP selector for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4 for Debian & Ubuntu (and optionally directly nginx-PHP-FPM)
